@@ -1,4 +1,4 @@
-package com.margieblair;
+package com.margieblair.BasicClasses;
 
 import java.util.ArrayList;
 import java.util.List;

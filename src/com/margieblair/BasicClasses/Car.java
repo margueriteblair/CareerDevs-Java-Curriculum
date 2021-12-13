@@ -1,4 +1,4 @@
-package com.margieblair;
+package com.margieblair.BasicClasses;
 
 public class Car {
     private String licensePlate;
