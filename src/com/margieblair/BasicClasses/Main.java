@@ -26,6 +26,7 @@ public class Main {
                 String licenseSelected = scanner.next();
                 returnCar(licenseSelected);
             } else if (option == 3) {
+                System.out.println("Thanks for coming!");
                 break;
             } else  {
                 System.out.println("Please select option 1, 2, or 3");
