@@ -18,6 +18,7 @@ public class Main {
         }
         while (true) {
             System.out.println("Would you like to (1) book a car or (2) return a car or (3) leave dealership:");
+
             int option = scanner.nextInt();
             if (option == 1) {
                 String licenseSelected = scanner.next();
