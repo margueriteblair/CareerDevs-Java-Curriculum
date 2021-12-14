@@ -16,11 +16,19 @@ public class Main {
         for (int i = 0; i < availableCars.size(); i++) {
             System.out.println(availableCars.get(i).toString());
         }
-        System.out.println("Select license:");
-        String licenseSelected = scanner.next();
-        System.out.println(licenseSelected);
-        bookCar(licenseSelected);
-        displayAllCars();
+        while (true) {
+            System.out.println("Would you like to (1) book a car or (2) return a car or (3) leave dealership:");
+            int option = scanner.nextInt();
+            if (option == 1) {
+                String licenseSelected = scanner.next();
+                bookCar(licenseSelected);
+            } else if (option == 2) {
+                String licenseSelected = scanner.next();
+                returnCar(licenseSelected);
+            }
+            displayAllCars();
+        }
+
     }
 
     public static void bookCar(String id) {
@@ -36,7 +44,7 @@ public class Main {
     public static void returnCar(String id) {
         for (int i = 0; i < bookedCars.size(); i++) {
             if (id.equals(bookedCars.get(i).getLicensePlate())) {
-                System.out.println("You've booked " + bookedCars.get(i).toString());
+                System.out.println("You've returned " + bookedCars.get(i).toString());
                 availableCars.add(bookedCars.remove(i));
                 break;
             }
