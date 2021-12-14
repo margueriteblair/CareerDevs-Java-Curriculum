@@ -16,19 +16,41 @@ public class Main {
         for (int i = 0; i < availableCars.size(); i++) {
             System.out.println(availableCars.get(i).toString());
         }
+        System.out.println("Select license:");
         String licenseSelected = scanner.next();
+        System.out.println(licenseSelected);
         bookCar(licenseSelected);
+        displayAllCars();
     }
 
     public static void bookCar(String id) {
         for (int i = 0; i < availableCars.size(); i++) {
-            if (id == availableCars.get(i).getLicensePlate()) {
-                System.out.println("You've booked" + availableCars.get(i).toString());
+            if (id.equals(availableCars.get(i).getLicensePlate())) {
+                System.out.println("You've booked " + availableCars.get(i).toString());
                 bookedCars.add(availableCars.remove(i));
                 break;
             }
         }
+    }
 
+    public static void returnCar(String id) {
+        for (int i = 0; i < bookedCars.size(); i++) {
+            if (id.equals(bookedCars.get(i).getLicensePlate())) {
+                System.out.println("You've booked " + bookedCars.get(i).toString());
+                availableCars.add(bookedCars.remove(i));
+                break;
+            }
+        }
+    }
 
+    public static void displayAllCars()  {
+        System.out.println("\nAvailable cars:");
+        for (int i = 0; i < availableCars.size(); i++) {
+            System.out.println(availableCars.get(i).toString());
+        }
+        System.out.println("Booked cars:");
+        for (int i = 0; i < bookedCars.size(); i++) {
+            System.out.println(bookedCars.get(i).toString());
+        }
     }
 }
