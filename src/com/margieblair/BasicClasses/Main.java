@@ -17,6 +17,17 @@ public class Main {
             System.out.println(availableCars.get(i).toString());
         }
         String licenseSelected = scanner.next();
+        bookCar(licenseSelected);
+    }
+
+    public static void bookCar(String id) {
+        for (int i = 0; i < availableCars.size(); i++) {
+            if (id == availableCars.get(i).getLicensePlate()) {
+                System.out.println("You've booked" + availableCars.get(i).toString());
+                bookedCars.add(availableCars.remove(i));
+                break;
+            }
+        }
 
 
     }
