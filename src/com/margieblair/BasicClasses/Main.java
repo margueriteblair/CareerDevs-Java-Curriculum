@@ -11,7 +11,7 @@ public class Main {
         availableCars.add(new Car("HELLOWRLD", "Ford", "Thunderbird", 1990));
         availableCars.add(new Car("JAVA", "Ford", "ModelT", 1920));
         availableCars.add(new Car("MREEEH", "Honda", "Civic", 2012));
-
+        //hi
         System.out.println("Welcome to the car dealership! Please select which car you'd like to rent based on the license plate:");
         for (int i = 0; i < availableCars.size(); i++) {
             System.out.println(availableCars.get(i).toString());
