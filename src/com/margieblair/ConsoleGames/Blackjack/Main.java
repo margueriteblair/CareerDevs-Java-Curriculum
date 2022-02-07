@@ -9,6 +9,7 @@ public class Main {
         System.out.println(testCard.toString());
         System.out.println(queenHearts.toString());
         System.out.println(aceClubs.toString());
+        Deck deck = new Deck();
 
     }
 
