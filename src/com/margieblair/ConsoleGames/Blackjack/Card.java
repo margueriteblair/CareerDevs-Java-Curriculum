@@ -36,6 +36,6 @@ public class Card {
             default -> strRank = Integer.toString(rank);
 
         }
-        return "This is a " + strRank + " of " + this.suit;
+        return "This is the " + strRank + " of " + this.suit;
     }
 }
