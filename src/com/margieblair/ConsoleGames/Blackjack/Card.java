@@ -29,10 +29,12 @@ public class Card {
     public String toString() {
         String strRank = "";
         switch (rank) {
-            case 1 -> strRank = "Ace";
-            case 11 -> strRank = "Jack";
-            case 12 -> strRank = "Queen";
-            case 13 -> strRank = "King";
+            // 6 of Diamonds => point = 6
+            // jack, queen,king => points 10
+            case 1 -> strRank = "Ace"; //1, or 11 points
+            case 11 -> strRank = "Jack"; //10
+            case 12 -> strRank = "Queen"; //10 all worth 10 pts
+            case 13 -> strRank = "King"; //10
             default -> strRank = Integer.toString(rank);
 
         }
