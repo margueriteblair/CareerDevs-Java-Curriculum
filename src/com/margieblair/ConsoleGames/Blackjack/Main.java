@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner input = new Scanner(System.in);
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         System.out.println("Welcome to Blackjack!");
         Deck deck = new Deck();
@@ -16,6 +16,8 @@ public class Main {
             System.out.println("Hello! Would you like (1) start a new game? or (2) leave the Blackjack table?");
             margie.getHand().clear(); //we ensure that we're starting with empty hands for the player & dealer
             dealer.getHand().clear();
+            int playerPoints = 0;
+            int dealerPoints = 0;
             int userResponse = input.nextInt();
             if (userResponse == 2) {
                 break;
@@ -34,11 +36,22 @@ public class Main {
                     int userHitOrStand = input.nextInt();
                     if (userHitOrStand == 1) {
                         margie.drawCard(deck);
-                        margie.displayHand();
+                        playerPoints = margie.displayHand();
+                        //add in more logic to evaluate the game outcome
+                        //
                     } else if (userHitOrStand == 2) {
                         break;
                     }
                 }
+
+                dealerPoints = dealer.displayHand();
+                while (dealerPoints < 17) {
+                    Thread thread = new Thread();
+                    thread.sleep(1000);
+                    dealer.drawCard(deck);
+                    dealerPoints = dealer.displayHand();
+                }
+                BlackjackGame.evaluateGame(playerPoints, dealerPoints);
             }
         }
 

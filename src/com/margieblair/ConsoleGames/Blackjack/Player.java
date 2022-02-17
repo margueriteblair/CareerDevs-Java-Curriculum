@@ -27,7 +27,7 @@ public class Player implements Actor {
             if (this.hand.get(i).getRank() > 10) {
                 sum += 10;
             } else if (this.hand.get(i).getRank() == 1) {
-                sum += 11; //
+                sum += 11; //we need to add logic for making EITHER 1 or 11 based on what the user decides
             } else {
                 sum += this.hand.get(i).getRank();
             }
