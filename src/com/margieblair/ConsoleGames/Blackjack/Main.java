@@ -1,7 +1,8 @@
 package com.margieblair.ConsoleGames.Blackjack;
 
 import java.util.Scanner;
-
+//todo: isolate methods & game logic, clean up main method
+//todo: add better styling for more readability
 public class Main {
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args) throws InterruptedException {
