@@ -32,15 +32,19 @@ public class Hangman {
 
     }
 
-    static public void printWordState(String word, List<Character> playerGuesses) {
+    static public boolean printWordState(String word, List<Character> playerGuesses) {
+        int correctCount = 0;
         for (int i = 0; i < word.length(); i++) {
             if (playerGuesses.contains(word.charAt(i))) {
+                correctCount++;
                 System.out.print(word.charAt(i));
             } else {
                 System.out.print("-");
             }
         }
         System.out.println();
+        if (correctCount == word.length()) return true;
+        return false;
     }
 
     static public void getPlayerGuess(Scanner keyboard, String word, List<Character> playerGuesses) {
